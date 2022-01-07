@@ -1,0 +1,21 @@
+body{
+    background-color: #010101;
+    color: #ffffff;
+}
+
+
+div.content{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction : column;
+}
+
+div.content div.menu{
+    text-align: left;
+    font-size: 25px;
+    padding: 7px;
+}
+
+div.content div.menu{
