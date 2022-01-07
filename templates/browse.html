@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block menu %}
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Serv-Rasp</a>
+  <form action="#" class="input-group" method="post">
+    <input class="form-control mr-sm-2" type="text" placeholder="file/folder 's name" aria-label="Search" name="files">
+
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="submit">Search File/Folder</button>
+  </form>
+
+{% endblock %}
+
+{% block back %}
+
+<a class="btn btn-secondary" href="/.." role="button">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<h1> [content of the home page] </h1>
+
+{% endblock %}
