@@ -14,12 +14,25 @@
 
 {% block back %}
 
-<a class="btn btn-secondary" href="/.." role="button">Back</a>
+<a class="btn btn-secondary" href="/.." role="button">Home</a>
 
 {% endblock %}
 
 {% block content %}
 
-<h1> [content of the home page] </h1>
+<p> {{files}} <p>
+{% for i in files %}
+    {% if i == "token.txt" %}
+        <a href="/{{path}}" download="{{i}}">
+            {{i}}
+        </a>
+    {% else %}
+        <form action="#" class="input-group" method="post">
+            <input type="hidden" value="{{i}}" name="cliquedfile">
+            <button type="submit" class="btn btn-secondary btn-lg btn-block" value="submit">{{i}}</button>
+        </form>
+    {% endif %}
+
+{% endfor %}
 
 {% endblock %}
