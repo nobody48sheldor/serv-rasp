@@ -20,8 +20,8 @@
 
 {% block content %}
 <form action="#" class="input-group" method="post" enctype = "multipart/form-data">
-    <input type="file" class="btn btn-warning" name="upload">
-    <button type="submit" class="btn btn-success">upload</button>
+    <input type="file" class="btn btn-warning" name="upload" style="margin-left: 20px">
+    <button type="submit" class="btn btn-success" style="margin-left: 5px">upload</button>
 </form>
 <p></p>
 
@@ -41,7 +41,7 @@
     {% if i != ".."%}
         <form action="#" class="input-group" method="post">
             <input type="hidden" value="{{i}}" name="download">
-            <button type="submit" class="btn btn-success" value="submit" style="margin: 7px">download "{{i}}"</button>
+            <button type="submit" class="btn btn-success" value="submit" style="margin: 7px; margin-left: 20px">download "{{i}}"</button>
         </form>
     {% endif %}
 {% endfor %}
