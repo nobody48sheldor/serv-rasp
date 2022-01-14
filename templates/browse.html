@@ -14,15 +14,22 @@
 
 {% block back %}
 
-<a class="btn btn-secondary" href="/.." role="button", style="margin: 20px">Home</a>
+<a class="btn btn-secondary" href="../piapp" role="button", style="margin: 20px">Home</a>
 
 {% endblock %}
 
 {% block content %}
-<form action="#" class="input-group" method="post" enctype = "multipart/form-data">
-    <input type="file" class="btn btn-warning" name="upload" style="margin-left: 20px">
-    <button type="submit" class="btn btn-success" style="margin-left: 5px">upload</button>
-</form>
+<div style="display: inline">
+    <form action="#" class="input-group" method="post" enctype = "multipart/form-data">
+        <input type="file" class="btn btn-outline-warning" name="upload" style="margin-left: 20px">
+        <button type="submit" class="btn btn-success" style="margin-left: 5px">upload</button>
+    </form>
+    <form action="#" class="input-group" method="post" enctype = "multipart/form-data">
+        <input class="form-control mr-sm-2" type="search" placeholder="Name" aria-label="Search" style="margin-left: 60%; margin-top: 20px" name="makedir">
+        <button type="submit" class="btn btn-outline-success" style="margin: 20px">make directory</button>
+    </form>
+</div>
+
 <p></p>
 
 {% for i in files %}
@@ -39,9 +46,17 @@
     {% endif %}
 
     {% if i != ".."%}
-        <form action="#" class="input-group" method="post">
+        <form action="#" class="input-group" method="post" style="display: inline">
             <input type="hidden" value="{{i}}" name="download">
             <button type="submit" class="btn btn-success" value="submit" style="margin: 7px; margin-left: 20px">download "{{i}}"</button>
+        </form>
+        <form action="#" class="input-group" method="post" style="display: inline">
+            <input type="hidden" value="{{i}}" name="delet">
+            <button type="submit" class="btn btn-danger" value="submit" style="margin: 7px; margin-left: 20px">delet "{{i}}"</button>
+        </form>
+        <form action="#" class="input-group" method="post" style="display: inline">
+            <input type="hidden" value="{{i}}" name="deletdir">
+            <button type="submit" class="btn btn-outline-danger" value="submit" style="margin: 7px; margin-left: 20px">delet directory "{{i}}"</button>
         </form>
     {% endif %}
 {% endfor %}

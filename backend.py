@@ -3,7 +3,8 @@ import os
 from werkzeug.utils import secure_filename
 import shutil
 
-path = ["home", "arnaud", "Desktop", "arnaud"]
+#path = ["home", "pi", "Desktop"]
+path = ["home", "arnaud", "Desktop"]
 PATH = ""
 
 app = Flask(__name__)
@@ -45,6 +46,34 @@ def browse():
                     PATH = PATH + "/" + i
                 #send_from_directory(directory=PATH, path=Dfile)
                 return(send_from_directory(directory=PATH, path=Dfile, as_attachment=True, max_age=0))
+            except:
+                None
+        if folder == "":
+            try:
+                Delfile = request.form['delet']
+                PATH = ""
+                for i in path:
+                    PATH = PATH + "/" + i
+                #send_from_directory(directory=PATH, path=Dfile)
+                os.remove(PATH + "/" + Delfile)
+            except:
+                None
+        if folder == "":
+            try:
+                Deldir = request.form['deletdir']
+                PATH = ""
+                for i in path:
+                    PATH = PATH + "/" + i
+                os.rmdir(PATH + "/" + Deldir)
+            except:
+                None
+        if folder == "":
+            try:
+                makedir = request.form['makedir']
+                PATH = ""
+                for i in path:
+                    PATH = PATH + "/" + i
+                os.mkdir(PATH + "/" + makedir)
             except:
                 None
         if folder == "..":
