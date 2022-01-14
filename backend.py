@@ -76,9 +76,22 @@ def browse():
                 os.mkdir(PATH + "/" + makedir)
             except:
                 None
+        if folder == "":
+            try:
+                file = request.form['renamefile']
+                newname = request.form['rename']
+                PATH = ""
+                print(file, ", ", newname)
+                for i in path:
+                    PATH = PATH + "/" + i
+                os.rename(PATH + "/" + file, PATH + "/" + newname)
+            except:
+                None
         if folder == "..":
-            path.pop(len(path) - 1)
-            #return(render_template("index.html"))
+            if len(path) > 3:
+                path.pop(len(path) - 1)
+            else:
+                return(render_template("index.html"))
         else:
             path.append(folder)
         PATH = ""

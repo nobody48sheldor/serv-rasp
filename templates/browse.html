@@ -58,6 +58,14 @@
             <input type="hidden" value="{{i}}" name="deletdir">
             <button type="submit" class="btn btn-outline-danger" value="submit" style="margin: 7px; margin-left: 20px">delet directory "{{i}}"</button>
         </form>
+        <form action="#" class="input-group" method="post" style="display: inline; margin-left: 20px">
+            <input type="hidden" value="{{i}}" name="renamefile">
+            <button type="submit" class="btn btn-outline-warning" value="submit" style="margin: 7px; margin-left: 20px">rename "{{i}} to : "</button>
+            <div style="margin: 7px; display: inline-block">
+                <input class="form-control" type="text" placeholder="New name" aria-label="text" name="rename">
+            </div>
+        </form>
+
     {% endif %}
 {% endfor %}
 
