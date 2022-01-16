@@ -87,6 +87,16 @@ def browse():
                 os.rename(PATH + "/" + file, PATH + "/" + newname)
             except:
                 None
+        if folder == "":
+            try:
+                file = request.form['movefile']
+                newpath = request.form['movepath']
+                PATH = ""
+                for i in path:
+                    PATH = PATH + "/" + i
+                shutil.move(PATH + "/" + file, PATH + "/" + newpath)
+            except:
+                None
         if folder == "..":
             if len(path) > 3:
                 path.pop(len(path) - 1)

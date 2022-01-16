@@ -66,6 +66,14 @@
             </div>
         </form>
 
+        <form action="#" class="input-group" method="post" style="display: inline; margin-left: 20px">
+            <input type="hidden" value="{{i}}" name="movefile">
+            <button type="submit" class="btn btn-outline-success" value="submit" style="margin: 4px; margin-bottom: 6px">move "{{i}} to : "</button>
+            <div style="margin: 7px; display: inline-block">
+                <input class="form-control" type="text" placeholder="Path" aria-label="text" name="movepath">
+            </div>
+        </form>
+
     {% endif %}
 {% endfor %}
 
